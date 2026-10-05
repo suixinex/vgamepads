@@ -7,7 +7,6 @@ import vgamepad.vigem_client as vcli
 import ctypes
 from ctypes import CFUNCTYPE, c_void_p, c_ubyte
 from abc import ABC, abstractmethod
-from inspect import signature  # Check if user defined callback function is legal
 
 
 def check_err(err):
