@@ -104,7 +104,7 @@ python vgamepad.py
 
 ## config.ini
 
-仓库里带了一份默认配置；如果文件不存在，程序首次运行也会自动在脚本同目录生成。
+程序首次运行会在脚本同目录自动生成这个文件。
 程序**只修改具体的值，不会重写整个文件** —— 你自己加的注释、空行和自定义配置项都会保留。
 
 ```ini
@@ -127,7 +127,7 @@ D:\Steam\steamapps\common\bbb\bbb.exe
 
 > 注释请**单独占一行**（以 `;` 或 `#` 开头）。程序按标准 ini 解析，不支持写在值后面的行内注释。
 
-> 进程列表属于个人配置，如果你 fork 了这个仓库，提交前记得把自己机器上的进程名删掉。
+> 这个文件存的是每个用户自己的配置（尤其是进程列表），已经加进 `.gitignore`，不会提交到仓库。
 
 ### 自动显隐的工作方式
 
@@ -143,7 +143,7 @@ D:\Steam\steamapps\common\bbb\bbb.exe
 
 ```
 vgamepad.py                  主程序，全部功能都在这一个文件里
-config.ini                   配置文件（也可删掉，程序会自动重新生成）
+config.ini                   配置文件，首次运行自动生成（已被 .gitignore 忽略）
 VX360Gamepad.py              Xbox 360 全部按键的用法示例
 VDS4Gamepad.py               DualShock 4 全部按键的用法示例
 vgamepad/                    第三方库副本（yannbouteiller/vgamepad），装了库的话可以删
