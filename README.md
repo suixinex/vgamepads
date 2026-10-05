@@ -5,7 +5,7 @@
 
 > ## ⚠️ 免责声明
 >
-> 本项目的 `vgamepad.py` 代码**完全由 AI 编写、也完全由 AI 测试**。
+> 本项目的 `vgamepads.py` 代码**完全由 AI 编写、也完全由 AI 测试**。
 > **不保证完全可用**，也不保证在你的机器、你的游戏上表现一致。请自行评估风险后再使用。
 
 ---
@@ -41,20 +41,20 @@
 
 ```bash
 pip install PySide6
-python vgamepad.py
+python vgamepads.py
 ```
 
-### 方式二：自己装好 vgamepad 库，只跑 vgamepad.py
+### 方式二：自己装好 vgamepad 库，只跑 vgamepads.py
 
 如果你已经装过 [yannbouteiller/vgamepad](https://github.com/yannbouteiller/vgamepad)
 （这个库的 pip 安装脚本会自动帮你安装 ViGEmBus 驱动）：
 
 ```bash
 pip install vgamepad PySide6
-python vgamepad.py
+python vgamepads.py
 ```
 
-这种方式下**只留 `vgamepad.py` 一个文件就够了**，仓库里的 `vgamepad/` 目录可以删掉，
+这种方式下**只留 `vgamepads.py` 一个文件就够了**，仓库里的 `vgamepad/` 目录可以删掉，
 程序会自动改用你已安装的库。反过来，如果 `vgamepad/` 目录还在，程序优先用它。
 
 > 无论哪种方式，都要确保 **ViGEmBus 驱动已经安装**；没有它程序会在启动时弹窗提示。
@@ -65,7 +65,7 @@ python vgamepad.py
 2. **左键单击这个圆点**就能把面板调出来，再点一下收起。
 3. 想让它随游戏自动显隐，就编辑 `config.ini` 里的进程列表（见下文）。
 
-不想看到控制台黑窗口的话，用 `pythonw vgamepad.py` 启动。
+不想看到控制台黑窗口的话，用 `pythonw vgamepads.py` 启动。
 
 ## 使用说明
 
@@ -142,7 +142,7 @@ D:\Steam\steamapps\common\bbb\bbb.exe
 ## 目录结构
 
 ```
-vgamepad.py                  主程序，全部功能都在这一个文件里
+vgamepads.py                 主程序，全部功能都在这一个文件里
 config.ini                   配置文件，首次运行自动生成（已被 .gitignore 忽略）
 VX360Gamepad.py              Xbox 360 全部按键的用法示例
 VDS4Gamepad.py               DualShock 4 全部按键的用法示例
@@ -180,7 +180,7 @@ A small always-on-top panel that lets you drive a **virtual Xbox 360 / DualShock
 on Windows with the mouse. Built with PySide6 on top of
 [yannbouteiller/vgamepad](https://github.com/yannbouteiller/vgamepad).
 
-> **Disclaimer:** `vgamepad.py` was **written and tested entirely by AI**.
+> **Disclaimer:** `vgamepads.py` was **written and tested entirely by AI**.
 > It is **not guaranteed to be fully functional** — use it at your own risk.
 
 **Requirements:** Windows 11 x64, Python 3.10+, PySide6, and the
@@ -189,12 +189,12 @@ on Windows with the mouse. Built with PySide6 on top of
 **Two ways to run:**
 
 1. **Download this repo** — it bundles a copy of the `vgamepad` library:
-   `pip install PySide6` then `python vgamepad.py`.
+   `pip install PySide6` then `python vgamepads.py`.
 2. **Bring your own library** — install [yannbouteiller/vgamepad](https://github.com/yannbouteiller/vgamepad)
-   (`pip install vgamepad PySide6`), then run `python vgamepad.py`. In this case the bundled
+   (`pip install vgamepad PySide6`), then run `python vgamepads.py`. In this case the bundled
    `vgamepad/` folder can be deleted.
 
-Use `pythonw vgamepad.py` for no console window.
+Use `pythonw vgamepads.py` for no console window.
 The panel starts hidden — **left-click the tray dot** to show it, **right-click** for the menu.
 Settings live in `config.ini`.
 

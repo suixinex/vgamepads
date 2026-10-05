@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
-"""vgamepad.py —— 虚拟手柄可视化控制面板（PySide6 + ViGEmBus）。
+"""vgamepads.py —— 虚拟手柄可视化控制面板（PySide6 + ViGEmBus）。
 
 本文件把原来的 virtual_controller.py（全按键面板）和 virtual_left_joystick.py
 （单左摇杆）合并重构为一个可切换布局的应用：
 
 * 托盘常驻，启动时窗口隐藏；
-* 单击托盘图标切换显示/隐藏，双击（或右键）弹出托盘菜单；
+* 单击托盘图标切换显示/隐藏，右键弹出菜单；
 * 手柄型号（Xbox 360 / DualShock 4）与界面布局（全按键 / 单摇杆）随时可切；
 * 自动显隐：config.ini 里列出的进程在前台时自动显示，否则自动隐藏；
 * 所有配置保存在脚本同目录的 config.ini，窗口位置不保存。
 
-注意：本文件与同目录下的 vgamepad/ 包同名。Python 的模块查找顺序里“包目录”
-优先于同名 .py 文件，而本文件是以 __main__ 身份运行的，所以下面的
-``import vgamepad`` 导入的是 vgamepad/ 包，两者不会冲突。
+同目录下的 vgamepad/ 是第三方库 yannbouteiller/vgamepad 的副本，本文件通过
+``import vgamepad`` 使用它；如果该目录不存在，则会改用 pip 安装的同名库。
 
 运行环境：Windows 11 x64 + 最新版 Python / PySide6。
 """
@@ -66,7 +65,7 @@ else:
 # 常量与日志
 # ==========================================================================
 
-APP_NAME = "VGamepad"
+APP_NAME = "VGamepads"
 
 BASE_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = BASE_DIR / "config.ini"
@@ -86,7 +85,7 @@ LAYOUT_TITLES = {LAYOUT_FULL: "全按键", LAYOUT_STICK: "单摇杆"}
 SIDE_LEFT = "left"
 SIDE_RIGHT = "right"
 
-log = logging.getLogger("vgamepad")
+log = logging.getLogger("vgamepads")
 
 
 def _setup_logging() -> None:
@@ -106,7 +105,7 @@ def _setup_logging() -> None:
 
 DEFAULT_CONFIG_TEXT = """\
 ; ==========================================================================
-; VGamepad 配置文件（UTF-8）
+; VGamepads 配置文件（UTF-8）
 ; 本文件由程序自动维护：改完数值保存即可，注释和自定义内容都会被保留。
 ; ==========================================================================
 
