@@ -2,7 +2,6 @@
 Adapted from ViGEm source
 """
 
-import platform
 from pathlib import Path
 from ctypes import CDLL, POINTER, CFUNCTYPE, c_void_p, c_uint, c_ushort, c_ulong, c_bool, c_ubyte
 from vgamepad.vigem_commons import XUSB_REPORT, DS4_REPORT, DS4_REPORT_EX, VIGEM_TARGET_TYPE

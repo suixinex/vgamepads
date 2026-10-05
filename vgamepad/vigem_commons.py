@@ -219,9 +219,9 @@ def check_notification_callback(candidate):
     """
     Returns a TypeError unless the signature of `candidate` matches that of `dummy_callback`.
     """
-    if not signature(callback_function) == signature(dummy_callback):
+    if not signature(candidate) == signature(dummy_callback):
         raise TypeError(
                 "Needed callback with six parameters "
                 "(client, target, large_motor, small_motor, led_number, user_data); "
-                "got: {}".format(signature(callback_function))
+                "got: {}".format(signature(candidate))
         )
